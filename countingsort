@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+
+
+class Solution{
+    public:
+   
+    string countSort(string arr){
+        
+        int i=0;
+        multiset<char> a;
+        while(arr[i]!='\0')
+        {
+            a.insert(arr[i]);
+            i++;
+        }
+        arr.clear();
+        for(auto it=a.begin();it!=a.end();it++)
+        {
+           arr.push_back(*it); 
+        }
+        return arr;
+    }
+};
+
+
+
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        string arr;
+        cin>>arr;
+        Solution obj;
+        cout<<obj.countSort(arr)<<endl;
+    }
+    return 0;
+}
